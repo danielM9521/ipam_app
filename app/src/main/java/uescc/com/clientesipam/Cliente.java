@@ -8,7 +8,15 @@ public class Cliente {
     private String pagoCli;
     private String duiCli;
 
+/*public Cliente(String codigo, String nombre, String apellido, String tipo, String pago, String dui){
+    this.codigoCli = codigo;
+    this.nombreCli =nombre;
+    this.apellidoCli = apellido;
+    this.tipoCli = tipo;
+    this.pagoCli = pago;
+    this.duiCli = dui;
 
+}*/
 
     public String getNombreCli() {
         return nombreCli;

@@ -8,7 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="uescc.com.clientesipam.MainActivity">
+    tools:context="uescc.com.clientesipam.MainActivity"
+    android:weightSum="1"
+    android:orientation="vertical">
 
     <TextView
         android:text="Prueba"
@@ -17,10 +19,16 @@
         android:id="@+id/textView2" />
 
     <Button
-        android:text="Button"
+        android:id="@+id/btnCrearNuevo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnCrearNuevo" />
+        android:text="Button" />
+
+    <ListView
+        android:id="@+id/listViewClientes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.68" />
 
 
 </LinearLayout>

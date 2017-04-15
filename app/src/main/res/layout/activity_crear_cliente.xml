@@ -80,13 +80,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView6"
         />
+
     <Spinner
+        android:id="@+id/opcionSpn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:id="@+id/opcionSpn"
-        android:entries="@array/tipo_cliente"
-        />
+        android:entries="@array/tipo_cliente" />
+
     <TextView
         android:text="@string/lbl_tipocliente"
         android:layout_width="wrap_content"
