@@ -18,22 +18,13 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
-  /* probando el listview
-   private Cliente[] listado = new Cliente[]
-            {
-                    new Cliente("12","ronald","rodriguez","credito","mayorista","3323123")
 
-            };
-*/
     Button btnNuevo;
     ListView listView;
-    // Variable estatica, se puede acceder a ella desde otra activity escribiendo el nombre de la actividad
-    // en este caso MainActivity.clientes es usada en el metodo crearCliente de CrearClienteActivity
 
     public static List<Cliente> clientes;
-
     private AdaptadorClientes adaptador;
-  //  private ArrayAdapter<Cliente> adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +34,31 @@ public class MainActivity extends AppCompatActivity {
         clientes = new ArrayList<Cliente>();
 
         adaptador = new AdaptadorClientes(this,clientes);
+
         listView = (ListView) findViewById(R.id.listViewClientes);
+
         listView.setAdapter(adaptador);
 
         btnNuevo = (Button) findViewById(R.id.btnCrearNuevo);
         final Intent intent = new Intent(this, CrearClienteActivity.class);
 
+
+
         btnNuevo.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 startActivity(intent);
+
             }
         });
 
+
+    }
+    @Override
+    public void onResume() {
+        super.onResume();  // Always call the superclass method first
+
+        listView.setAdapter(adaptador);
 
     }
 
@@ -88,14 +91,7 @@ public class MainActivity extends AppCompatActivity {
             lblTipo.setText(clientes.get(posicion).getTipoCli());
             lblFormaDePago.setText(clientes.get(posicion).getPagoCli());
             lblDui.setText(clientes.get(posicion).getDuiCli());
-            /*prueba de listview
-            lblCodigo.setText(listado[posicion].getCodigoCli());
-            lblNombre.setText(listado[posicion].getNombreCli());
-            lblApellidos.setText(listado[posicion].getApellidoCli());
-            lblTipo.setText(listado[posicion].getTipoCli());
-            lblFormaDePago.setText(listado[posicion].getPagoCli());
-            lblDui.setText(listado[posicion].getDuiCli());
-            */
+
             return (item);
         }
 
